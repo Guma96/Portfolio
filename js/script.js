@@ -1,3 +1,6 @@
+let menuIcon = documen.querySelector("#menu-icon");
+let navbar = document.querySelector(".navbar");
+
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll("header nav a");
 
@@ -10,11 +13,13 @@ window.onscroll = () => {
 
     if (top >= offset && top < offset + height) {
       navLinks.forEach((links) => {
-        links.classList.remove('active');
-        document.querySelector('header nav a[href*=" + id "]').classList.add("active");
-          
-         
+        links.classList.remove("active");
+        document.querySelector('header nav a[href=" + id "]').classList.add("active");
       });
     }
   });
 };
+
+let header = document.querySelector("header");
+
+header.classList.toggle("stick", window.scrollY > 100);
